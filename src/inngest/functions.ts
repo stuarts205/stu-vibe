@@ -166,8 +166,8 @@ export const codeAgentFunction = inngest.createFunction(
           data: {
             projectId: event.data.projectId,
             content: 'Something went wrong. Please try again later.',
-            role: "USER",
-            type: "RESULT",
+            role: "ASSISTANT",
+            type: "ERROR",
           }
         })
       }
@@ -176,7 +176,7 @@ export const codeAgentFunction = inngest.createFunction(
         data: {
           projectId: event.data.projectId,
           content: result.state.data.summary,
-          role: "USER",
+          role: "ASSISTANT",
           type: "RESULT",
           fragments: {
             create: {
